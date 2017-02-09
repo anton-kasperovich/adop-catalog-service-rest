@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  catalog:
+    container_name: catalog
+    image: iniweb/adop-catalog-service-rest:0.1.0
+    networks:
+      - backbone
+    expose:
+      - 5000
+
+networks:
+  backbone:
+    external:
+      name: ${CUSTOM_NETWORK_NAME}
