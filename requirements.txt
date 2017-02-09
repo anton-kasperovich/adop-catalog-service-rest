@@ -1,1 +1,6 @@
 Flask==0.10.1
+Flask-SQLAlchemy==2.1
+Flask-WTF==0.12
+Flask-Restless==0.17.0
+pytz==2015.7
+Flask-Admin==1.4.2
