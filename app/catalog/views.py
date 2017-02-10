@@ -59,7 +59,7 @@ def pre_get_installapp(instance_id=None,**kw):
     Install.query.delete()
     app = Metadata.query.filter_by(id=instance_id).first_or_404()
     #print app.source_url
-    url = "http://172.18.0.24:8080/jenkins/job/Platform_Management/job/Load_Platform_Extension/buildWithParameters?GIT_URL=" + app.source_url + "&AWS_CREDENTIALS=adop-ldap-admin"
+    url = "http://jenkins:8080/jenkins/job/Platform_Management/job/Load_Platform_Extension/buildWithParameters?GIT_URL=" + app.source_url + "&AWS_CREDENTIALS=adop-ldap-admin"
     #print url
     #print os.environ
     #print os.environ.get('INITIAL_ADMIN_USER')
