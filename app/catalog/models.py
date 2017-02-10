@@ -20,16 +20,34 @@ class Metadata(db.Model):
     type = db.Column(db.String(255))
     description = db.Column(db.String(255))
     image = db.Column(db.String(255))
-    source_url_url = db.Column(db.String(255))
+    source_url = db.Column(db.String(255))
 
-    def __init__(self, sdk_version='', name='',type='',description='',image='',source_url_url=''):
+    def __init__(self, sdk_version='', name='',type='',description='',image='',source_url=''):
         self.sdk_version = sdk_version
         self.name = name
         self.type = type
         self.description = description
         self.image = image
-        self.source_url_url = source_url_url
+        self.source_url = source_url
 
     def __repr__(self):
-        return '<Extensions%d>' % self.id
+        return '<Metadata%d>' % self.id
+
+class Install(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    app_id  = db.Column(db.String(255), index=True)
+    name  = db.Column(db.String(255), index=True)
+    source_url = db.Column(db.String(255))
+    status = db.Column(db.String(255))
+    error = db.Column(db.String(255))
+
+    def __init__(self, app_id='', name ='', source_url ='', status ='', error=''):
+        self.app_id = app_id
+        self.name = name
+        self.source_url = source_url
+        self.status = status
+        self.error = error
+
+    def __repr__(self):
+        return '<Install%d>' % self.id
 
